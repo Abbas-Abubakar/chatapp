@@ -1,8 +1,0 @@
-{
-  "rewrites": [
-    { "source": "/auth/:path*",    "destination": "https://chatapp-backend-1cr6.onrender.com/auth/:path*" },
-    { "source": "/message/:path*", "destination": "https://chatapp-backend-1cr6.onrender.com/message/:path*" },
-    { "source": "/users/:path*",   "destination": "https://chatapp-backend-1cr6.onrender.com/users/:path*" },
-    { "source": "/(.*)",           "destination": "/index.html" }
-  ]
-}
