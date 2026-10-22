@@ -15,7 +15,7 @@ export const useSocketStore = create((set, get) => ({
     const { authUser } = useAuthStore.getState();
     if (!authUser?.id) return;
 
-    const newSocket = io(import.meta.env.BACKEND_URL, {
+    const newSocket = io(import.meta.env.VITE_BACKEND_URL, {
       query: { userId: authUser.id },
     });
 

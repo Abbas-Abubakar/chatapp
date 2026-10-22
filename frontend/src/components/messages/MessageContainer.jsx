@@ -6,6 +6,7 @@ import { TiMessages } from "react-icons/ti"
 import { IoArrowBack } from "react-icons/io5"
 import { useAuthStore } from "../../zustand/useAuthStore"
 import useLastSeen from "../../hooks/useLastSeen"
+import Avatar from "../Avatar"
 
 const MessageContainer = () => {
   const { selectedConversation, setSelectedConversation } = useConversation()
@@ -40,7 +41,7 @@ const ChatHeader = ({ user, onBack }) => {
       </button>
 
       <div className="relative shrink-0">
-        <img src={user.profilePic} alt="" className="size-11 rounded-full bg-white/10 object-cover" />
+        <Avatar name={user.fullname} size="md" />
         {isOnline && <span className="absolute bottom-0 right-0 size-3 rounded-full bg-emerald-400 ring-2 ring-[#161922]" />}
       </div>
 

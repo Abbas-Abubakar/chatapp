@@ -4,6 +4,7 @@ import SearchInput from "./SearchInput"
 import LogoutButton from "./LogoutButton"
 import { useConversation } from "../../zustand/useConservation"
 import { useAuthStore } from "../../zustand/useAuthStore"
+import Avatar from "../Avatar"
 
 const Sidebar = () => {
   const { selectedConversation } = useConversation()
@@ -32,7 +33,7 @@ const Sidebar = () => {
 
       {/* current user + logout */}
       <div className="flex items-center gap-3 px-4 py-3 border-t border-white/10 bg-black/20 pb-[max(0.75rem,env(safe-area-inset-bottom))]">
-        <img src={authUser?.profilePic} alt="" className="size-10 rounded-full bg-white/10 object-cover" />
+        <Avatar name={authUser?.fullname || authUser?.username} size="md" />
         <div className="flex-1 min-w-0">
           <p className="text-sm font-bold text-white truncate">{authUser?.fullname || authUser?.username}</p>
           <p className="text-xs text-white/50 truncate">@{authUser?.username}</p>

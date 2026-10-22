@@ -28,3 +28,14 @@ export function formatLastSeen(dateString){
   if (dayDiff < 7) return `Last seen ${date.toLocaleDateString(undefined, { weekday: "long" })} at ${time}`
   return `Last seen ${date.toLocaleDateString(undefined, { day: "numeric", month: "short", year: "numeric" })}`
 }
+
+export function formatListTime(dateString) {
+  if (!dateString) return ""
+  const date = new Date(dateString)
+  const dayDiff = Math.round((startOfDay(new Date()) - startOfDay(date)) / 86400000)
+
+  if (dayDiff <= 0) return extractTIme(date)
+  if (dayDiff === 1) return "Yesterday"
+  if (dayDiff < 7) return date.toLocaleDateString(undefined, { weekday: "short" })
+  return date.toLocaleDateString(undefined, { day: "numeric", month: "short" })
+}
