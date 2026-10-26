@@ -62,9 +62,9 @@ Create `.env`:
 
 ```env
 PORT=5000
-MONGO_DB_URI=mongodb://localhost:27017/chatapp
+MONGO_DB_URI=your_mongodb_url
 JWT_SECRET=replace-with-a-long-random-string
-NODE_ENV=development
+NODE_ENV=your_node_env
 CLIENT_URL=http://localhost:5173
 ```
 
@@ -75,7 +75,7 @@ npm run dev
 ### 2. Frontend
 
 ```bash
-git clone <your-frontend-repo-url>
+git clone https://github.com/Abbas-Abubakar/chatapp.git
 cd frontend
 npm install
 ```
